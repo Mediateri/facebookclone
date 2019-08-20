@@ -15,7 +15,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.3'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'warden'

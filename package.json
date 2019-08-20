@@ -1,8 +1,12 @@
 {
-  "name": "facebookclone",
+  "name": "y",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "mediateri <ntawukuriryayomeddy1@gmail.com>",
+  "license": "MIT"
 }
