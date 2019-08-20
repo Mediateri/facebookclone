@@ -18,6 +18,8 @@ gem 'mini_magick', '~> 4.3'
 gem 'rails-ujs', '~> 0.1.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'warden'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
