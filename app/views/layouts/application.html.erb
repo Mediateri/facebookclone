@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Facebookclone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="/bootstrap4-glyphicons/css/bootstrap-glyphicons.min.css" rel="stylesheet" type="text/css" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="small">
+  <nav class="navbar navbar-expand-sm bg-custom navbar-dark">
+  <a class="navbar-brand" href="#">Facebookclone</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+  <div class="d-flex justify-content-end">
+  <ul class="navbar-nav ">
+  <% if logged_in? %>
+  <li class="nav-item active">
+  <%= link_to "Profile", user_path(current_user.id), class: "nav-link " %>
+  </li>
+  <li class="nav-item">
+   <%= link_to "Logout", session_path(current_user.id), class: "nav-link", method: :delete %>
+  </li>
+  <li class="nav-item">
+   <%= link_to 'Comment', new_post_path, class: "nav-link" %> 
+  </li>
+
+  <% else %>
+  </li>
+  <li class="nav-item">
+  <%= link_to "Login page", new_session_path, class: "nav-link" %> 
+  </li>
+  </li>
+  <li class="nav-item">
+  <%= link_to "Sign up", new_user_path, class: "nav-link" %>
+  </li>
+    
+    
+</ul>
+</div>
+<% end %>
+
+</nav>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8">
+   
+      <%= yield %>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>

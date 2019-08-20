@@ -1,0 +1,70 @@
+<div id="accordion">
+
+  <div class="card ">
+    <div class="card-header bg-primary">
+      <a class="card-link " data-toggle="collapse" href="#collapseOne">
+        <div class="d-flex justify-content-center">
+          <p>form</p>
+        </div>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+      <%= form_with(model: user, local: true) do |form| %>
+        <div class="form-group">
+        <% if user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      
+            <ul>
+            <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      
+        <div class="field">
+          <%= form.label :first_name %>
+          <%= form.text_field :first_name, class: "form-control form-control-sm" %>
+        </div>
+      
+        <div class="field">
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: "form-control form-control-sm" %>
+        </div>
+      
+        <div class="field">
+          <%= form.label :email %>
+          <%= form.text_field :email, class: "form-control form-control-sm" %>
+        </div>
+      
+        <div class="field">
+          <%= form.label :password %>
+          <%= form.password_field :password, class: "form-control form-control-sm" %>
+        </div>
+        <div class="field">
+        <%= form.label :confirmation %>
+        <%= form.password_field :confirmation, class: "form-control form-control-sm" %>
+      </div>
+      
+        <div class="field">
+          <%= form.label :dob %>
+          <%= form.date_select :dob , class: "form-control form-control-sm" %>
+        </div>
+      
+        <div class="field">
+          <%= form.label :gender %>
+          <%= form.text_field :gender, class: "form-control form-control-sm" %>
+        </div>
+      
+        <div class="actions">
+          <%= form.submit  %>
+        </div>
+        </div>
+      <% end %>
+      
+      </div>
+    </div>
+  </div>
+  </div>
