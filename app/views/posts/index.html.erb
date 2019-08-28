@@ -8,10 +8,13 @@
       <p>sender: <%= post.user.first_name %></p>
       <p><%= image_tag post.image.url, class: "img-fluid img-thumbnail" %></p>
        <p> <%= post.content %></p>
-        
-        <p><%= link_to 'Show', post, class: "btn btn-outline-info" %>
-        <%= link_to 'Edit', edit_post_path(post), class: "btn btn-outline-success" %>
-        <%= link_to 'Delete', post, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+       <% if logged_in? %>
+        <% if current_user.id == post.user_id %>
+            <p><%= link_to 'Show', post, class: "btn btn-outline-info" %>
+            <%= link_to 'Edit', edit_post_path(post), class: "btn btn-outline-success" %>
+            <%= link_to 'Delete', post, class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
+      <% end %> 
     <% end %>
 
 <br>
